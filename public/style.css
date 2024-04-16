@@ -1,0 +1,112 @@
+body {
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 400;
+    font-weight: bold;
+    background-color: #2C0064;
+}
+
+.section-inner {
+    text-align: center;
+
+}
+
+.register-login {
+    display: inline;
+
+}
+
+.header-links * {
+    text-decoration: none;
+    color: white;
+    size: 27px;
+    font-weight: 700px;
+}
+
+.section-header-title {
+    font-size: 64px;
+    color: white;
+    font-weight: 800px;
+}
+
+.section-header-wrapper {
+    display: inline;
+    margin: 0px 412px;
+
+}
+
+.section-header-title,
+.section-header-form {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.section-header-main {
+    margin-top: 200px;
+}
+
+.section-header-subtitle {
+    font-size: 20px;
+    color: #A4A4A4;
+}
+
+.section-header-input-field {
+    width: 900px;
+    height: 79px;
+    /* padding-left: 46px; */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.section-header-input-button {
+    width: 228px;
+    height: 79px;
+    font-size: 24px;
+    color: white;
+    background-color: #5900CA;
+    border-radius: 3px;
+    border: none;
+    font-weight: bold;
+
+}
+
+.section-header-head {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.section-header-head * {
+    margin: 10px;
+}
+
+.section-about-wrapper {
+    color: white;
+    background-color: #291B8B;
+    min-height: 444px;
+    background-image: linear-gradient(to right, #291b8b, #3e198c, #4f168c, #5e138c, #6c0f8c);
+
+    
+  
+}   
+
+.section-about-text-title {
+    font-size: 36px;
+    margin: 10px;
+   
+}
+
+.section-about-text-subtitle {
+    font-size: 16px;
+    line-height: 30px;
+    margin: 10px;
+}
+
+.section-about-text {
+    display: inline-block;
+    width: 900px;
+    margin-left: 60px;
+    height: 444px;
+      
+}
+.section-about-call{
+    display: inline-block;
+}
