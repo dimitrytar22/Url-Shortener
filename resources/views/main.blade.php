@@ -6,18 +6,7 @@
 @section('content')
     <section class="header">
         <div class="section-inner">
-            <div class="section-header-head">
-                <span class="header-links">
-                    <a href="/home">Home</a>
-                    <a href="/statistics">Statistics</a>
-                    <a href="/QR-code">QR Code Generator</a>
-                    <div class="register-login">
-                        <a href="/register">Register</a>
-                        <a href="/login">Login</a>
-                    </div>
-                </span>
 
-            </div>
             <div class="section-header-main">
                 <div class="section-header-wrapper">
 
@@ -39,8 +28,6 @@
         </div>
     </section>
 
-
-
     <section class="about">
         <div class="section-about-wrapper">
             <div class="section-about-text-wrapper">
@@ -61,18 +48,17 @@
                     </div>
                 </span>
                 <span class="section-about-call">
-
+                    <span class="section-about-call-image"><img src="{{ asset('imgs/contact.png') }}" alt="contact.png"
+                            width="185px" height="185px"></span>
+                    <span class="section-about-call-title">Experience the benefits of link management for your
+                        business</span>
+                    <div class="section-about-call-button-wrapper"><button class="section-about-call-button">Call
+                            us</button></div>
                 </span>
             </div>
         </div>
     </section>
 
-    <section class="footer">
-        <section class="author">
-
-        </section>
-        <section class="footer-links">
-
-        </section>
-    </section>
+    
 @endsection
+<script></script>

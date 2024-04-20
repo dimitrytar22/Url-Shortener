@@ -5,7 +5,7 @@ body {
     background-color: #2C0064;
 }
 
-.section-inner {
+.section-inner, .nav {
     text-align: center;
 
 }
@@ -23,7 +23,7 @@ body {
 }
 
 .section-header-title {
-    font-size: 64px;
+    font-size: 43px;
     color: white;
     font-weight: 800px;
 }
@@ -36,8 +36,8 @@ body {
 
 .section-header-title,
 .section-header-form {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .section-header-main {
@@ -45,21 +45,21 @@ body {
 }
 
 .section-header-subtitle {
-    font-size: 20px;
+    font-size: 18px;
     color: #A4A4A4;
 }
 
 .section-header-input-field {
-    width: 900px;
-    height: 79px;
+    width: 700px;
+    height: 69px;
     /* padding-left: 46px; */
     font-size: 24px;
     font-weight: bold;
 }
 
 .section-header-input-button {
-    width: 228px;
-    height: 79px;
+    width: 200px;
+    height: 69px;
     font-size: 24px;
     color: white;
     background-color: #5900CA;
@@ -71,7 +71,7 @@ body {
 
 .section-header-head {
     margin-top: 10px;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .section-header-head * {
@@ -79,6 +79,7 @@ body {
 }
 
 .section-about-wrapper {
+   
     color: white;
     background-color: #291B8B;
     min-height: 444px;
@@ -89,24 +90,78 @@ body {
 }   
 
 .section-about-text-title {
-    font-size: 36px;
+    font-size: 26px;
     margin: 10px;
    
 }
+.section-about-call-title{
+    font-size: 24px;
+}
 
 .section-about-text-subtitle {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 30px;
     margin: 10px;
 }
 
 .section-about-text {
     display: inline-block;
-    width: 900px;
+    width: 700px;
     margin-left: 60px;
-    height: 444px;
+    height: 344px;
       
 }
 .section-about-call{
+    display: inline-block;
+    
+    margin-left: 60px;
+    height: 344px;
+}
+.section-about-call-title{
+    line-height: normal;
+    display: inline-block;
+    width: 525px;
+    word-wrap: break-word;
+}
+.section-about-call-button-wrapper{
+    text-align: center;
+    
+}
+.section-about-call-button{
+    background-color:#5900CA;
+    
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 400;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    border: none;
+    width: 180px;
+    height: 65px;
+}
+.section-about-call-button:hover{
+    background-color: #4d03ad;
+    cursor: pointer;
+}
+.section-author-title{
+    margin: 50px;
+    text-align: center;
+    color: white;
+}
+.footer-links{
+    text-align: center;
+}
+.section-footer-links-wrapper{
+    margin: 10px;
+}
+.section-footer-link{
+    text-decoration: none;
+    color: #A4A4A4;
+}
+.section-footer-links-wrapper a{
+    /* display: block; */
+}
+.section-footer-links-span{
     display: inline-block;
 }
