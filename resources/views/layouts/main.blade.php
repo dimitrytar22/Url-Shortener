@@ -18,6 +18,8 @@
 </head>
 
 <body>
+
+
     {{-- <section class="nav">
         <div class="section-header-head">
             <span class="header-links">
@@ -41,7 +43,7 @@
         </div>
     </section> --}}
     <nav
-        class="flex-no-wrap relative flex w-full items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
+        class="flex-no-wrap relative flex w-full items-center justify-between bg-zinc-100 py-2 shadow-dark-mild dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4">
         <div class="flex w-full flex-wrap items-center justify-between px-3">
             <!-- Hamburger button for mobile view -->
             <button
@@ -100,37 +102,39 @@
                     <a class="me-4 text-neutral-600 dark:text-white" href="{{ route('dashboard') }}">Dashboard</a>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <input class="me-4 text-neutral-600 dark:text-white hover:cursor-pointer" href="#" value="Log out" type="submit">
+                        <input class="me-4 text-neutral-600 dark:text-white hover:cursor-pointer m-0 p-0" href="#"
+                            value="Log out" type="submit">
                     </form>
                 @endauth
             </div>
 
     </nav>
+    <div class="py-12 bg-zinc-50">
+        @yield('content')
 
-    @yield('content')
-
-    <section class="footer">
-        <section class="author">
-            <div class="section-author-title">Powered by Tarasenko</div>
-        </section>
-        <section class="footer-links">
-            <div class="section-footer-links-site">
-                <span class="section-footer-links-span">
-                    <span class="section-footer-links-wrapper">
-                        <a href="{{ route('main.index') }}" class="section-footer-link">What is a branded ink</a>
-                        <a href="{{ route('main.index') }}" class="section-footer-link">UTM builder</a>
-                        <a href="{{ route('main.index') }}" class="section-footer-link">Link retargeting</a>
-                        <a href="{{ route('main.index') }}" class="section-footer-link">Link shortener</a>
+        <section class="footer">
+            <section class="author">
+                <div class="section-author-title">Powered by Tarasenko</div>
+            </section>
+            <section class="footer-links">
+                <div class="section-footer-links-site">
+                    <span class="section-footer-links-span">
+                        <span class="section-footer-links-wrapper">
+                            <a href="{{ route('main.index') }}" class="section-footer-link">What is a branded ink</a>
+                            <a href="{{ route('main.index') }}" class="section-footer-link">UTM builder</a>
+                            <a href="{{ route('main.index') }}" class="section-footer-link">Link retargeting</a>
+                            <a href="{{ route('main.index') }}" class="section-footer-link">Link shortener</a>
+                        </span>
+                        <span class="section-footer-links-wrapper">
+                            <a href="{{ route('main.index') }}" class="section-footer-link">Link tracking</a>
+                            <a href="{{ route('main.index') }}" class="section-footer-link"></a>
+                            <a href="{{ route('main.index') }}" class="section-footer-link">TinyURL alternative</a>
+                        </span>
                     </span>
-                    <span class="section-footer-links-wrapper">
-                        <a href="{{ route('main.index') }}" class="section-footer-link">Link tracking</a>
-                        <a href="{{ route('main.index') }}" class="section-footer-link"></a>
-                        <a href="{{ route('main.index') }}" class="section-footer-link">TinyURL alternative</a>
-                    </span>
-                </span>
-            </div>
-            <div class="section-footer-links-policy"></div>
-        </section>
+                </div>
+                <div class="section-footer-links-policy"></div>
+            </section>
+    </div>
 
 </body>
 

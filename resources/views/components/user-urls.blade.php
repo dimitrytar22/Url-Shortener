@@ -12,6 +12,9 @@
                     Shortened URL
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    Clicks
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Created At
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -31,6 +34,9 @@
                     </td>
                     <td class="px-6 py-4">
                         <a href="{{route('shortenedurl.show', ['shortenedURL' => $shortenedURL->shortened])}}" target="_blank" class="hover:text-gray-950">{{route('shortenedurl.show', ['shortenedURL' => $shortenedURL->shortened])}}</a>
+                    </td>
+                    <td class="px-6 py-4">
+                        <p class="font-medium text-blue-600 dark:text-blue-500">{{$shortenedURL->clicks}}</p>
                     </td>
                     <td class="px-6 py-4">
                         {{ $shortenedURL->created_at }}

@@ -23,6 +23,11 @@ class ShortenedURLService{
 
     public function show($shortenedURL){
         $originRow = ShortenedURL::where('shortened', '=', $shortenedURL)->first();
+        $this->addClick($originRow);
         return $originRow;
+    }
+    private function addClick(ShortenedURL $shortenedURL){
+        $oldClicks = intval($shortenedURL->clicks);
+        $shortenedURL->update(['clicks' => ++$oldClicks]);
     }
 }
