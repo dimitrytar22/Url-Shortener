@@ -29,10 +29,7 @@
                         <th scope="col" class="px-6 py-3">
                             Clicks
                         </th>
-                        <th scope="col" class="px-6 py-3">
-                            Action
-                            <span class="sr-only">Edit</span>
-                        </th>
+                       
                     </tr>
                 </thead>
                 <tbody>
