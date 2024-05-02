@@ -26,7 +26,7 @@
 
 
 
-    {{-- <section class="header">
+    <section class="header">
         <div class="section-inner">
 
             <div class="section-header-main">
@@ -36,11 +36,11 @@
                         Free URL Shortener
                     </div>
                     <div class="section-header-form">
-                        {{-- <form action="{{route('shortenedurl.store')}}" method="post">
-@csrf --
+                        {{-- <form action="{{route('shortenedurl.store')}}" method="post"> --}}
+{{-- @csrf  --}}
                         <input class="section-header-input-field" type="text" name="origin" placeholder="Enter link here">
                         <input class="section-header-input-button" type="submit" value="Shorten URL">
-                        {{-- </form> --
+                         {{-- </form>  --}}
                     </div>
                     <div class="section-header-urls m-3">
                         <div id="output-div">
@@ -127,6 +127,6 @@
                 </span>
             </div>
         </div>
-    </section> --}}
+    </section>
 @endsection
 <script></script>

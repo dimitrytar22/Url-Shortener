@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\ShortenedURLController;
 use App\Http\Controllers\StatisticsController;
 use App\Models\ShortenedURL;
@@ -13,6 +14,7 @@ Route::group(['prefix' => '/url'], function(){
     Route::get('/{shortenedURL}', [ShortenedURLController::class, 'show'])->name('shortenedurl.show');
 });
 Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
+Route::get('/qrcode', [QRCodeController::class, 'index'])->name('qrcode.index');
 
 
 Route::middleware([

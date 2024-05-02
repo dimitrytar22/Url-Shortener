@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class StatisticsController extends Controller
 {
     public function index(){
-        return view('statistics.index', ['shortenedURLs' => ShortenedURL::orderBy('clicks', 'desc')->get()]);
+        return view('statistics.index', ['shortenedURLs' => ShortenedURL::orderBy('clicks', 'desc')->paginate(10)]);
     }
 }

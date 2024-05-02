@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index(){
         $user = Auth::user();
-        $shortenedURLs = ShortenedURL::where('user_id', '=', $user->id)->get();
+        $shortenedURLs = ShortenedURL::query()->where('user_id', '=', $user->id)->paginate(10);
         return view('dashboard', ['shortenedURLs' => $shortenedURLs]);
     }
 }
