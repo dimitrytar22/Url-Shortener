@@ -15,4 +15,7 @@ class ShortenedURL extends Model
     {
         return substr(hash('sha256', $origin),0,8);
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

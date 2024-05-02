@@ -21,7 +21,7 @@ class ShortenedURLService{
         return $response->toArray();
     }
 
-    public function show($shortenedURL){
+    public function show(string $shortenedURL){
         $originRow = ShortenedURL::where('shortened', '=', $shortenedURL)->first();
         $this->addClick($originRow);
         return $originRow;
