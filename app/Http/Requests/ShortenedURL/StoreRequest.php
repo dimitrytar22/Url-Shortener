@@ -22,7 +22,7 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'origin' => 'required|string'
+            'origin' => 'required|string|url'
         ];
     }
 }

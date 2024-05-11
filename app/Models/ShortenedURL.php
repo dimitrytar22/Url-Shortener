@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ShortenedURL extends Model
 {
     use HasFactory;
-    protected $table = 'shortened_URLs';
+    protected $table = 'shortened_urls';
     protected $guarded = [];
 
     public static function generateShortURL($origin)

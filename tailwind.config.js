@@ -12,6 +12,11 @@ export default {
     ],
 
     theme: {
+        colors: {
+            'pale-dark': '#ECD06F',
+            'pale': '#EEE2DC',
+            'custom-blue': '#2779a7'
+        },
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],

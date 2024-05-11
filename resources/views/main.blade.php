@@ -6,18 +6,36 @@
 @section('content')
     <div class="container mx-auto h-screen ">
         <div
-            class="relative h-[350px] overflow-hidden bg-[url('https://tecdn.b-cdn.net/img/new/slides/041.webp')] bg-cover bg-[50%] bg-no-repeat">
-            <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-black/60 bg-fixed">
-                <div class="flex h-full items-center justify-center">
-                    <div class="px-6 text-center text-white md:px-12">
-                        <h1 class="mb-6 text-5xl font-bold">Heading</h1>
-                        <h3 class="mb-8 text-3xl font-bold">Subeading</h3>
-                        <button type="button"
-                            class="inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-300 hover:text-neutral-200 focus:border-neutral-300 focus:text-neutral-200 focus:outline-none focus:ring-0 active:border-neutral-300 active:text-neutral-200 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600"
+            class="relative h-[350px] overflow-hidden bg-zink-50 bg-cover bg-[50%] bg-no-repeat">
+            <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-pale rouned border-2 bg-fixed">
+                <div class=" w-full h-full items-center justify-center">
+                    <div class="px-6 text-center text-white md:px-12 w-full">
+                        <h1 class="mb-6 text-5xl font-bold">Free URL Shortener</h1>
+                        <h3 class="mb-8 text-3xl font-bold">Cut It</h3>
+
+                        
+                        <div class="  w-full  items-center justify-center m-2">
+                            <input
+                                class="font-mono  font-black section-header-input-field w-1/2 inline-block rounded border-2 text-black px-6 pb-[6px] pt-2 text-xs font-medium  leading-normal  transition duration-150 ease-in-out  focus:outline-none focus:ring-0 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600"
+                                type="text" name="origin" placeholder="Enter link here">
+                            <button type="button"
+                                class="section-header-input-button inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out  focus:outline-none focus:ring-0 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600"
+                                data-twe-ripple-init data-twe-ripple-color="light">
+                                Shorten URL
+                            </button>
+                            
+                        </div>
+                        <div  class="  w-full h-full items-center justify-center"><input readonly
+                            class=" new-url w-1/4  font-mono  font-black  rounded border-2 text-black px-6 pb-[6px] pt-2 text-xs font-medium  leading-normal  transition duration-150 ease-in-out  focus:outline-none focus:ring-0   dark:hover:bg-neutral-600 dark:focus:bg-neutral-600" />
+                            <button type="button"
+                            class="copy-btn inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out  focus:outline-none focus:ring-0 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600"
                             data-twe-ripple-init data-twe-ripple-color="light">
-                            Call to action
+                            Copy
                         </button>
+                        <div class="px-6 mt-2 font-mono"><p>By using Shorten URL, ypu agree to <a href="{{route('main.index')}}">Rebrandly’s Terms of use</a>, <a href="{{route('main.index')}}">Privacy Policy</a> and <a href="{{route('main.index')}}">Cookie Policy</a></p></div>
                     </div>
+                    </div>
+                
                 </div>
             </div>
         </div>
@@ -35,24 +53,7 @@
                     <div class="section-header-title">
                         Free URL Shortener
                     </div>
-                    <div class="section-header-form">
-                        {{-- <form action="{{route('shortenedurl.store')}}" method="post"> --}}
-{{-- @csrf  --}}
-                        <input class="section-header-input-field" type="text" name="origin" placeholder="Enter link here">
-                        <input class="section-header-input-button" type="submit" value="Shorten URL">
-                         {{-- </form>  --}}
-                    </div>
-                    <div class="section-header-urls m-3">
-                        <div id="output-div">
-                            <div class="content-row" id="new-url-label">Your short URL:</div>
-                            <input class="new-url" />
-
-                            <button type="button" class="copy-btn" data-clipboard-target="#new-url"
-                                class="content-row button">Copy</button>
-                        </div>
-
-
-                    </div>
+                    
                     <div class="section-header-subtitle">
                         By clicking Shorten URL, ypu agree to Rebrandly’s Terms of use, Privacy Policy and Cookie Policy
                     </div>
@@ -78,7 +79,6 @@
                         },
                         success: function(data) {
                             data = JSON.parse(data);
-                            // var newUrl = data.replace(/<[^>]*>?/gm, '');
                             var newUrl = data['shortened'];
                             $('.new-url').val(newUrl);
                         }
@@ -86,7 +86,9 @@
                     });
                 });
                 $('.copy-btn').click(function() {
-                    copyToClipboard($(".new-url").val());
+                    $(".new-url").select();
+                    document.execCommand('copy');
+                    // copyToClipboard($(".new-url").val());
                 });
 
                 function copyToClipboard(data) {

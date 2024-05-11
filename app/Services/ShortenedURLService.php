@@ -8,8 +8,10 @@ class ShortenedURLService{
 
 
     public function store(array $data):array{
-        
-        $data['user_id'] = Auth::user()->id;
+        if(!Auth::check())
+            $data['user_id'] = 0;
+        else
+            $data['user_id'] = Auth::user()->id;
         $data['shortened'] = ShortenedURL::generateShortURL($data['origin']);
         $checkIfExists = ShortenedURL::query()->where('shortened', '=', $data['shortened'])->where('user_id', '=', $data['user_id'])->first();
         if($checkIfExists){
