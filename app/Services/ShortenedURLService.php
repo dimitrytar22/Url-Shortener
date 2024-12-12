@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 class ShortenedURLService{
 
 
-    public function store(array $data):array{
+    public function store(array $data){
         if(!Auth::check())
             $data['user_id'] = 0;
         else
@@ -19,8 +19,8 @@ class ShortenedURLService{
         }else{
             $response =  ShortenedURL::create($data);
         }
-        $response['shortened'] = route('shortenedurl.show', ['shortenedURL' => $response->shortened]);
-        return $response->toArray();
+
+        return $response;
     }
 
     public function show(string $shortenedURL){

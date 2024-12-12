@@ -9,7 +9,12 @@ class ShortenedURL extends Model
 {
     use HasFactory;
     protected $table = 'shortened_urls';
-    protected $guarded = [];
+    protected $fillable = [
+        'origin',
+        'shortened',
+        'user_id',
+        'clicks'
+    ];
 
     public static function generateShortURL($origin)
     {

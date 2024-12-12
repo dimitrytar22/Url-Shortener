@@ -9,12 +9,10 @@ use App\Models\ShortenedURL;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('main.index');
-Route::group(['prefix' => '/url'], function(){
-    Route::post('/', [ShortenedURLController::class, 'store'])->name('shortenedurl.store');
-    Route::get('/{shortenedURL}', [ShortenedURLController::class, 'show'])->name('shortenedurl.show');
-});
+
 Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
 Route::get('/qrcode', [QRCodeController::class, 'index'])->name('qrcode.index');
+Route::get('/{shortenedURL}', [ShortenedURLController::class, 'show'])->name('shortenedurl.show');
 
 
 Route::middleware([

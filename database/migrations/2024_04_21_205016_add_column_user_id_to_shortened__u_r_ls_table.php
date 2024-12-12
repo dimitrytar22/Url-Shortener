@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('shortened_URLs', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->after('id')->nullable();
+            $table->unsignedBigInteger('user_id')->after('id');
             $table->index('user_id', 'shortened_URL_user_idx');
             $table->foreign('user_id', 'shortened_URL_user_fk')->on('users')->references('id');
         });
