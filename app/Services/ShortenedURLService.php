@@ -1,6 +1,8 @@
 <?php
 namespace App\Services;
 
+use App\Http\Requests\ShortenedUrl\UpdateRequest;
+use App\Http\Resources\ShortenedURLResource;
 use App\Models\ShortenedURL;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,12 +26,21 @@ class ShortenedURLService{
     }
 
     public function show(string $shortenedURL){
-        $originRow = ShortenedURL::where('shortened', '=', $shortenedURL)->first();
+        $originRow = ShortenedURL::query()->where('shortened', '=', $shortenedURL)->firstOrFail();
         $this->addClick($originRow);
         return $originRow;
     }
     private function addClick(ShortenedURL $shortenedURL){
         $oldClicks = intval($shortenedURL->clicks);
         $shortenedURL->update(['clicks' => ++$oldClicks]);
+    }
+    public function update(UpdateRequest $request, ShortenedURL $shortenedUrl)
+    {
+        $data = $request->validated();
+        $shortenedUrl->update($data);
+    }
+    public function destroy(ShortenedURL $shortenedUrl)
+    {
+        $shortenedUrl->delete();
     }
 }

@@ -15,6 +15,10 @@ class ShortenedURL extends Model
         'user_id',
         'clicks'
     ];
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 
     public static function generateShortURL($origin)
     {

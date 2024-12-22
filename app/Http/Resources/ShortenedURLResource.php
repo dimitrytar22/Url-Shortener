@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -20,6 +21,7 @@ class ShortenedURLResource extends JsonResource
           'origin' =>$this->origin,
           'shortened' => route('shortenedurl.show', ['shortenedURL' => $this->shortened]),
           'clicks' => $this->clicks,
+            'updated_at' => Carbon::parse($this->updated_at)->format('Y-m-d H:i:s')
         ];
     }
 }

@@ -1,5 +1,5 @@
-<tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-    <th scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+<tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b">
+    <th scope="row" class="px-6 py-4 font-medium text-gray-900 ">
         {{ $shortenedURL->id }}
     </th>
     <td class="px-6 py-4 break-all">
@@ -13,7 +13,7 @@
         <p class="font-medium ">{{ $shortenedURL->user->name }}</p>
     </td>
     <td class="px-6 py-4">
-        <p  class="font-medium text-blue-600 dark:text-blue-500">{{ $shortenedURL->clicks }}</p>
+        <p  class="font-medium text-blue-600">{{ $shortenedURL->clicks }}</p>
     </td>
     
 </tr>
