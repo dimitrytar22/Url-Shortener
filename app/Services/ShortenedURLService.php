@@ -19,7 +19,8 @@ class ShortenedURLService{
         if($checkIfExists){
             $response = $checkIfExists;
         }else{
-            $response =  ShortenedURL::create($data);
+            $response = ShortenedURL::create($data);
+            $response->refresh();
         }
 
         return $response;

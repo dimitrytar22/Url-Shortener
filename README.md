@@ -8,7 +8,6 @@ This is a Laravel-based URL shortening service. The application provides both a 
     - Shorten URLs through a clean and simple interface.
     - View and manage your previously shortened URLs.
     - Track click statistics for each shortened URL.
----
 
 ## Installation
 

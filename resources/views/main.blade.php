@@ -31,19 +31,22 @@
                         <h3 class="mb-8 text-3xl font-semibold">Make your links shorter and smarter!</h3>
 
                         <div class="w-full flex items-center justify-center m-2">
-                            <input
-                                class="font-mono font-black section-header-input-field w-1/2 inline-block rounded border-2 text-black px-6 pb-[6px] pt-2 text-xs font-medium leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
-                                type="text" name="origin" placeholder="Enter link here">
-                            <button type="button"
-                                    class="section-header-input-button inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out focus:outline-none focus:ring-0"
-                                    data-twe-ripple-init data-twe-ripple-color="light">
-                                Shorten URL
-                            </button>
+                            <form action="{{route('shortenedurl.store')}}" class="url-form" method="POST">
+                                <input type="hidden" value="{{ csrf_token() }}" name="csrf">
+                                <input
+                                    class="url-origin font-mono font-black section-header-input-field w-1/2 inline-block rounded border-2 text-black px-6 pb-[6px] pt-2 text-xs font-medium leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+                                    type="text" name="origin" placeholder="Enter link here">
+                                <button type="submit"
+                                        class="url-form-button section-header-input-button inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+                                        data-twe-ripple-init data-twe-ripple-color="light">
+                                    Shorten URL
+                                </button>
+                            </form>
                         </div>
 
                         <div class="w-full flex items-center justify-center">
                             <input readonly
-                                   class="new-url w-1/4 font-mono font-black rounded border-2 text-black px-6 pb-[6px] pt-2 text-xs font-medium leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"/>
+                                   class="new-url w-1/2 font-mono font-black rounded border-2 text-black px-6 pb-[6px] pt-2 text-xs font-medium leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"/>
                             <button type="button"
                                     class="copy-btn inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out focus:outline-none focus:ring-0"
                                     data-twe-ripple-init data-twe-ripple-color="light">
@@ -90,31 +93,8 @@
     </section>
 
 
-    <script>
-        $(document).ready(function () {
-            $('.section-header-input-button').click(function () {
-                var origin = $('.section-header-input-field').val();
-                $.ajax({
-                    url: "{{ route('shortenedurl.store') }}",
-                    method: "post",
-                    dataType: 'html',
-                    data: {
-                        'origin': origin,
-                        "_token": "{{ csrf_token() }}",
-                    },
-                    success: function (data) {
-                        data = JSON.parse(data)['data'];
-                        var newUrl = data['shortened'];
-                        $('.new-url').val(newUrl);
-                    }
-                });
-            });
+    <script src="{{asset('js/main.js')}}">
 
-            $('.copy-btn').click(function () {
-                $(".new-url").select();
-                document.execCommand('copy');
-            });
-        });
     </script>
 
 @endsection
